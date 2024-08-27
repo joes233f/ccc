@@ -1,1 +1,1 @@
-exit
+ Write-Host "URL: $url"  
