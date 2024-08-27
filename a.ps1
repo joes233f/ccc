@@ -1,7 +1,7 @@
 
 $computerInfo = Get-ComputerInfo  
   
-if (-not $computerInfo.Domain -or $computerInfo.Domain -eq "") {  
+if ($computerInfo.CsPartOfDomain -eq "False" -or $computerInfo.CsDomain -eq "WORKGROUP") {  
     Write-Host "bye"  
     exit  
 } else {  
