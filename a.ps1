@@ -6,7 +6,7 @@ if ($computerInfo.CsPartOfDomain)
  $domain = $computerInfo.Domain  
     $computerName = $computerInfo.CsName  
     $domain = $computerInfo.CsDomain
-    $fullString = "$domain_$computerName"  
+    $fullString = $domain+"_"+$computerName 
     $url = "http://www.baidu.com/?q=$fullString"  
     try {  
         $response = Invoke-WebRequest -Uri $url -Method Get -UseBasicParsing  
